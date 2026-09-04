@@ -1,7 +1,11 @@
 from random import randint
-from _graphic_arts.start_game_banner import run_screensaver
+
+from graphic_arts.start_game_banner import run_screensaver
+
 
 def attack(char_name: str, char_class: str) -> str:
+    """Function for randomly generating damage points
+     dealt to an opponent."""
     if char_class == 'warrior':
         return (
             f'{char_name} нанёс урон противнику равный '
@@ -19,6 +23,8 @@ def attack(char_name: str, char_class: str) -> str:
 
 
 def defence(char_name: str, char_class: str) -> str:
+    """Function for randomly generating the amount of
+    defense points that deflect an attack."""
     if char_class == 'warrior':
         return (f'{char_name} блокировал {10 + randint(5, 10)} урона')
     if char_class == 'mage':
@@ -28,6 +34,7 @@ def defence(char_name: str, char_class: str) -> str:
 
 
 def special(char_name: str, char_class: str) -> str:
+    """A function that reports the use of a special ability."""
     if char_class == 'warrior':
         return (
             f'{char_name} применил специальное умение «Выносливость '
@@ -40,6 +47,8 @@ def special(char_name: str, char_class: str) -> str:
 
 
 def start_training(char_name: str, char_class: str) -> str:
+    """A function that reports the character class
+    and offers to start training."""
     if char_class == 'warrior':
         print(f'{char_name}, ты Воитель — отличный боец ближнего боя.')
     if char_class == 'mage':
@@ -66,6 +75,7 @@ def start_training(char_name: str, char_class: str) -> str:
 
 
 def choice_char_class() -> str:
+    """Character selection function with confirmation."""
     approve_choice = None
     char_class = None
     while approve_choice != 'y':
